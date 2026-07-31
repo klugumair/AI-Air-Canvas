@@ -6,12 +6,12 @@ Live demo → ai-canvaslive.netlify.app
 
 What it does
 
-Your webcam watches your hand in real time. MediaPipe detects 21 landmarks on your hand every frame, and this app turns those coordinates into brushstrokes on a canvas. Point your index finger to draw, flash a peace sign to hover, pinch to erase. The whole thing runs locally in your browser — nothing is sent to a server.
+Your webcam watches your hand in real time. MediaPipe detects 21 landmarks on your hand every frame, and this app turns those coordinates into brushstrokes on a canvas. Point your index finger to draw, flash a peace sign to hover, pinch to erase. The whole thing runs locally in your browser nothing is sent to a server.
 
 Gestures
 Gesture	What happens
-☝️ Index finger up	Draw — holds a line as you move
-✌️ Index + middle up	Hover — navigate without drawing
+☝️ Index finger up	Draw-holds a line as you move
+✌️ Index + middle up	Hover - navigate without drawing
 🤏 Thumb + index pinch	Erase around the cursor
 Hover over toolbar button for 0.5s	Selects that tool hands-free
 Tech stack
@@ -50,7 +50,7 @@ Tool	Description
 🗑️ Clear All	Wipe the entire canvas
 💾 Save Image	Downloads your drawing as a PNG
 Known limitations
-Works best in good, even lighting — shadows on the hand confuse landmark detection
+Works best in good, even lighting-shadows on the hand confuse landmark detection
 Only tracks one hand at a time
 Very fast movements can outpace the tracker and leave gaps in lines
 Safari is not supported (WebAssembly SIMD required by MediaPipe)
