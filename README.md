@@ -1,4 +1,6 @@
-Draw in the air with your hand. No stylus, no touchscreen — just your webcam and your index finger.
+AI Air Canvas
+
+Draw in the air with your hand. No stylus, no touchscreen just your webcam and your index finger.
 
 Live demo → ai-canvaslive.netlify.app
 
@@ -13,16 +15,16 @@ Gesture	What happens
 🤏 Thumb + index pinch	Erase around the cursor
 Hover over toolbar button for 0.5s	Selects that tool hands-free
 Tech stack
-React + Vite — project scaffold
-MediaPipe Tasks Vision — hand landmark detection (runs on GPU via WebAssembly)
-HTML5 Canvas API — dual canvas system: one for artwork, one for the live landmark overlay
-Tailwind CSS — UI styling
+React + Vite - project scaffold
+MediaPipe Tasks Vision -hand landmark detection (runs on GPU via WebAssembly)
+HTML5 Canvas API- dual canvas system: one for artwork, one for the live landmark overlay
+Tailwind CSS-UI styling
 
 No backend. No database. Entirely client-side.
 
 How the drawing works
 
-Raw landmark coordinates jump slightly frame to frame. Drawing a straight line with them produces a jagged, stuttery path. To fix this, the app keeps a rolling buffer of the last 6 pointer positions and renders them using quadratic Bézier curves — each segment curves smoothly through the midpoint between two consecutive positions. The result is a brushstroke that feels fluid even at low framerates.
+Raw landmark coordinates jump slightly frame to frame. Drawing a straight line with them produces a jagged, stuttery path. To fix this, the app keeps a rolling buffer of the last 6 pointer positions and renders them using quadratic Bézier curves-each segment curves smoothly through the midpoint between two consecutive positions. The result is a brushstroke that feels fluid even at low framerates.
 
 The eraser uses globalCompositeOperation = 'destination-out' to punch a transparent hole in the drawing canvas rather than painting white over it, which means the video feed underneath shows through cleanly.
 
@@ -36,7 +38,7 @@ cd ai-air-canvas
 npm install
 npm run dev
 
-Open http://localhost:5173 in Chrome or Edge. When the browser asks for camera permission, allow it. The MediaPipe model (~8MB) downloads from Google's CDN on first load — after that it's cached.
+Open http://localhost:5173 in Chrome or Edge. When the browser asks for camera permission, allow it. The MediaPipe model (~8MB) downloads from Google's CDN on first load-after that it's cached.
 
 Firefox works but GPU delegation is unreliable; stick to a Chromium-based browser for the best tracking performance.
 
